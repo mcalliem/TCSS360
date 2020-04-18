@@ -1,8 +1,8 @@
 # Team Quasar
 Team Members: 
-- [Collin Nguyen](collin7@uw.edu)
-- [Evan McAlister](mcalliem@uw.edu)
-- [Idris Istanbul](idrisi@uw.edu)
+- [Collin Nguyen](mailto:collin7@uw.edu)
+- [Evan McAlister](mailto:mcalliem@uw.edu)
+- [Idris Istanbul](mailto:idrisi@uw.edu)
 - [Romi Tshiorny](mailto:romit@uw.edu)
 # Header 1
 ## Header 2
