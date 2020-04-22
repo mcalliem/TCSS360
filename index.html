@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {font-family: Arial;}
+body {font-family: Courier;}
 
 /* Style the tab */
 .tab {
@@ -45,28 +45,28 @@ body {font-family: Arial;}
 </head>
 <body>
 
-<h2>Tabs</h2>
-<p>Click on the buttons inside the tabbed menu:</p>
+<h1>Team Quasar - TCSS360</h1>
 
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-  <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+  <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
+  <button class="tablinks" onclick="openCity(event, 'Other')">Other</button>
 </div>
 
-<div id="London" class="tabcontent">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+  <h4>Our Team:</h4>
+  <p>Collin Evan Idris Romi</p>
 </div>
 
-<div id="Paris" class="tabcontent">
-  <h3>Paris</h3>
-  <p>Paris is the capital of France.</p> 
+<div id="Documents" class="tabcontent">
+  <h3>Documents:</h3>
+  <p>None Available at the moment</p> 
 </div>
 
-<div id="Tokyo" class="tabcontent">
-  <h3>Tokyo</h3>
-  <p>Tokyo is the capital of Japan.</p>
+<div id="Other" class="tabcontent">
+  <h3>Other</h3>
+  <p>.</p>
 </div>
 
 <script>
