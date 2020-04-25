@@ -81,7 +81,7 @@ body {font-family: Courier;}
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
   <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
-  <a href = "https://github.com/TeamQuasar/TCSS360/" class = tablinks> GitHub </a>
+  <button class="tablinks" onclick="sendToGitHub()">GitHub</button>
 </div>
 
 <div id="Home" class="tabcontent">
@@ -131,6 +131,9 @@ function togglePtypes() {
   else {
     element.style.display = "block";
   }
+}
+function sendToGitHub() {
+ window.location.href = "github.com/TeamQuasar/TCSS360";
 }
 document.getElementById("defaultOpen").click();
 </script>
