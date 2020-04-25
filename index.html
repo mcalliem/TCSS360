@@ -26,21 +26,6 @@ body {font-family: Courier;}
   background-color: #e7e7e7;
   color: black;
  }
- 
- .hubButton {
-  background-color: rgb(61,66,66);
-  color: white;
-  float: right;
-  border: 1px solid black;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
- }
- .hubButton:hover {
-  color: black;
- }
   
  #prototypes {
   width: 100%;
@@ -96,7 +81,7 @@ body {font-family: Courier;}
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
   <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
-  <button class="hubButton" onclick="sendToGitHub()">GitHub</button>
+  <button style = "float: right" class="tablinks" onclick="sendToGitHub()">GitHub</button>
 </div>
 
 <div id="Home" class="tabcontent">
