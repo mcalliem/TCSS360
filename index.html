@@ -39,7 +39,7 @@ body {font-family: Courier;}
 .tab {
   overflow: hidden;
   border: 1px solid #ccc;
-  margin: 0;
+  margin: -8px;
   padding: 0;
   background-color: #f1f1f1;
 }
@@ -70,6 +70,7 @@ body {font-family: Courier;}
 .tabcontent {
   display: none;
   padding: 6px 12px;
+  margin: -20px -8px;
   border: 1px solid #ccc;
   border-top: none;
 }
@@ -80,7 +81,7 @@ body {font-family: Courier;}
 <div class="tab">
   <button class="tablinks" onclick="openCity(event, 'Home')" id="defaultOpen">Home</button>
   <button class="tablinks" onclick="openCity(event, 'Documents')">Documents</button>
-  <button class="tablinks" onclick="openCity(event, 'Other')">Other</button>
+  <a href = "https://github.com/TeamQuasar/TCSS360/" class = tablinks> GitHub </a>
 </div>
 
 <div id="Home" class="tabcontent">
@@ -103,8 +104,8 @@ body {font-family: Courier;}
   </div>
 </div>
 
-<div id="Other" class="tabcontent">
-  <h3>Other</h3>
+<div id="GitHub" class="tabcontent">
+  <h3></h3>
   <p> Currently Empty </p>
 </div>
 
