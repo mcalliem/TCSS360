@@ -84,7 +84,7 @@ body {font-family: Courier;}
 /* Style the tab content */
 .tabcontent {
   display: none;
-  padding: 6px 12px;
+  padding: 30px 12px;
   margin: -20px -8px;
   border: 1px solid #ccc;
   border-top: none;
@@ -100,25 +100,25 @@ body {font-family: Courier;}
 </div>
 
 <div id="Home" class="tabcontent">
-  <h2>Home</h2>
   <h4>Our Team:</h4>
-  <a href="mailto:collin7@uw.edu"> Collin Nguyen</a>
-  <a href="mailto:mcalliem@uw.edu"><br> Evan McAlister</a>
-  <a href="mailto:idrisi@uw.edu"><br> Idris Istanbul</a> 
-  <a href="mailto:romit@uw.edu"><br> Romi Tshiorny</a> 
+  <div class = "container-md">
+    <a class = "text-info" href="mailto:collin7@uw.edu"> Collin Nguyen</a>
+    <a class = "text-info" href="mailto:mcalliem@uw.edu"><br> Evan McAlister</a>
+    <a class = "text-info" href="mailto:idrisi@uw.edu"><br> Idris Istanbul</a> 
+    <a class = "text-info" href="mailto:romit@uw.edu"><br> Romi Tshiorny</a> 
+  </div>
 </div>
 
 <div id="Documents" class="tabcontent">
-  <h2>Documents:</h2>
-  <h3>Prototypes:</h3> 
-  <button class = "pButton" onclick = "togglePtypes()"> Show Prototypes </button>
+  <button class = "pButton" onclick = "togglePtypes()"> Prototypes </button>
   <div id="prototypes">
    <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
-    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselIndicators" data-slide-to="2"></li>
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="1"></li>
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="2"></li>
   </ol>
+     
   <div class="carousel-inner">
     <div class="carousel-item active">
       <div class = "block">
@@ -133,7 +133,8 @@ body {font-family: Courier;}
     <div class="carousel-item">
       <div class = "block">
         <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vQmFF-R2J9rZFRUxIwJ6UBJqRGPfnlo5MkTWXfaiH_OnRjbYgkwx4KWtF4HAlkrgBPCXTvSiEHozZ2X/pub?w=907&h=408" alt = "GUI CONT"/>
-  </div>
+      </div>
+    </div>
   </div>
 </div>
 
