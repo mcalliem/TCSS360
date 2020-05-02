@@ -40,6 +40,23 @@ body {font-family: Courier;}
   margin-top: 20px;
   display: none;
 }
+  
+ #sequence {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  display: none;
+}
+  #domain {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  display: none;
+}
 /* Style the tab */
 .tab {
   overflow: hidden;
@@ -67,8 +84,8 @@ body {font-family: Courier;}
 }
  
  .block {
-  height:500px;
-  width: 100%;
+  max-width:100%;
+  max-height:100%;
   background-color:lightgray;
 }
 .block_image{
@@ -110,32 +127,20 @@ body {font-family: Courier;}
 </div>
 
 <div id="Documents" class="tabcontent">
-  <button class = "pButton" onclick = "togglePtypes()"> Prototypes </button>
-  <div id="prototypes">
-   <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
-    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="1"></li>
-    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="2"></li>
-  </ol>
-     
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class = "block">
-        <img class = "block_image"src = "https://docs.google.com/drawings/d/e/2PACX-1vSeMT0x17ewTMJHE5hFliv-pUzC1XdTKl1pDF9cTR2b_yHZH3kFFvqFYkIlfWpSkLysTJz1p77H3oAr/pub?w=960&h=720" alt = "PROJECT CHART"/>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class = "block">
-        <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vSZ_b2G_qbxaVax8eMzTni5fDM_29mJzuqjwU5Da22c4cSWJobk8eZSTrRqhd25rB8ZMj3jqeA_-46I/pub?w=960&h=720" alt = "GUI PROTOTYPE"/>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <div class = "block">
-        <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vQmFF-R2J9rZFRUxIwJ6UBJqRGPfnlo5MkTWXfaiH_OnRjbYgkwx4KWtF4HAlkrgBPCXTvSiEHozZ2X/pub?w=907&h=408" alt = "GUI CONT"/>
-      </div>
-    </div>
+  <button class = "pButton" onclick = "toggleTypes('prototypes')"> Prototypes </button>
+  <button class = "pButton" onclick = "toggleTypes('sequence')"> Sequence Model </button>
+  <button class = "pButton" onclick = "toggleTypes('domain')"> Domain Model </button>
+  <div class = "block" id="prototypes">
+    <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vSeMT0x17ewTMJHE5hFliv-pUzC1XdTKl1pDF9cTR2b_yHZH3kFFvqFYkIlfWpSkLysTJz1p77H3oAr/pub?w=960&h=720" alt = "PROJECT CHART"/>
+    <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vSZ_b2G_qbxaVax8eMzTni5fDM_29mJzuqjwU5Da22c4cSWJobk8eZSTrRqhd25rB8ZMj3jqeA_-46I/pub?w=960&h=720" alt = "GUI PROTOTYPE"/>
+    <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vQmFF-R2J9rZFRUxIwJ6UBJqRGPfnlo5MkTWXfaiH_OnRjbYgkwx4KWtF4HAlkrgBPCXTvSiEHozZ2X/pub?w=907&h=408" alt = "GUI CONT"/>
   </div>
+     <div class = "block" id="sequence"> 
+       <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vT5pwS-uSjCIhNZbthY6lUeLctEmJ43BbTDL_EwprNJC8PlxgmPYTQG2ul-UaY9LhUbkkrdYpPAuzn4/pub?w=803&h=512" alt = "SEQUENCE MODEL"/>
+     </div>
+  <div class = "block" id="domain"> 
+       <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vTa_5CZISOC7wxPRV5g5VRMtbGn21XjgRmZkaaT76siJVbjtYnLayuC-hEmVaIJBpqeny_Z_d0qwlRe/pub?w=682&h=601" alt = "DOMAIN MODEL"/>
+     </div>
 </div>
 
 <script>
@@ -152,15 +157,22 @@ function openTab(evt, cityName) {
   document.getElementById(cityName).style.display = "block";
   evt.currentTarget.className += " active";
 }
-function togglePtypes() {
-  var element = document.getElementById("prototypes");
+function toggleTypes(myID) {
+  var element = document.getElementById(myID);
   if (element.style.display == "block") {
     element.style.display = "none";
   } 
   else {
     element.style.display = "block";
   }
+  var others = document.getElementsByClassName("block");
+  for(var i = 0; i < others.length; i++){
+   if(!(others[i].id===element.id)){
+     others[i].style.display = "none";
+   }
+  }
 }
+
 function sendToGitHub() {
  window.location.href = "https://github.com/TeamQuasar/TCSS360";
 }
