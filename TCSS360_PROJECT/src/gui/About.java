@@ -1,3 +1,11 @@
+package gui;
+
+import java.util.Arrays;
+
+import javax.swing.BoxLayout;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * A short class for storing information about Homeowner's Manual Pro.
@@ -8,8 +16,13 @@
  * @author Idris Istanbul
  * @version 0.5
  */
-public class About 
+public class About extends JOptionPane
 {
+	/**
+	 * Serial Verison UID
+	 */
+	private static final long serialVersionUID = -1591965767072803047L;
+
 	/*
 	 * The name of the piece of software. 
 	 */
@@ -61,6 +74,25 @@ public class About
 	public String getVersion()
 	{
 		return myVersion; 
+	}
+	
+	/**
+	 * Shows the dialog box
+	 */
+	public void show() {
+		JPanel panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+		panel.setAlignmentX(CENTER_ALIGNMENT);
+		JLabel name = new JLabel(getName());
+		JLabel version = new JLabel("Version: " + getVersion());
+		JLabel authors = new JLabel(Arrays.toString(getAuthors()));
+		name.setAlignmentX(CENTER_ALIGNMENT);
+		version.setAlignmentX(CENTER_ALIGNMENT);
+		authors.setAlignmentX(CENTER_ALIGNMENT);
+		panel.add(name);
+		panel.add(version);
+		panel.add(authors);
+		JOptionPane.showMessageDialog(null, panel, "About", JOptionPane.DEFAULT_OPTION);
 	}
 		
 }
