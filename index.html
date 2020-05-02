@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<style>
+body {font-family: Courier;}
+
+ .topBar {
+  
+ }
+ /* Button Format*/
+ .pButton {
+  border: none;
+  background-color: #555555;
+  color: white;
+  padding: 15px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  transition-duration: 0.2s;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+ .pButton:hover {
+  background-color: #e7e7e7;
+  color: black;
+ }
+  
+ #prototypes {
+  width: 100%;
+  padding: 50px 0;
+  text-align: center;
+  background-color: white;
+  margin-top: 20px;
+  display: none;
+}
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  margin: -8px;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+ 
+ .block {
+  height:500px;
+  width: 100%;
+  background-color:lightgray;
+}
+.block_image{
+  max-width:100%;
+  max-height:100%;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 30px 12px;
+  margin: -20px -8px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+</style>
+</head>
+<body>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTab(event, 'Home')" id="defaultOpen">Home</button>
+  <button class="tablinks" onclick="openTab(event, 'Documents')">Documents</button>
+  <button style = "float: right" class="tablinks" onclick="sendToGitHub()">GitHub</button>
+</div>
+
+<div id="Home" class="tabcontent">
+  <h4>Our Team:</h4>
+  <div class = "container-md">
+    <a class = "text-info" href="mailto:collin7@uw.edu"> Collin Nguyen</a>
+    <a class = "text-info" href="mailto:mcalliem@uw.edu"><br> Evan McAlister</a>
+    <a class = "text-info" href="mailto:idrisi@uw.edu"><br> Idris Istanbul</a> 
+    <a class = "text-info" href="mailto:romit@uw.edu"><br> Romi Tshiorny</a> 
+  </div>
+</div>
+
+<div id="Documents" class="tabcontent">
+  <button class = "pButton" onclick = "togglePtypes()"> Prototypes </button>
+  <div id="prototypes">
+   <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="1"></li>
+    <li style = "height: 10px" data-target="#carouselIndicators" data-slide-to="2"></li>
+  </ol>
+     
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class = "block">
+        <img class = "block_image"src = "https://docs.google.com/drawings/d/e/2PACX-1vSeMT0x17ewTMJHE5hFliv-pUzC1XdTKl1pDF9cTR2b_yHZH3kFFvqFYkIlfWpSkLysTJz1p77H3oAr/pub?w=960&h=720" alt = "PROJECT CHART"/>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class = "block">
+        <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vSZ_b2G_qbxaVax8eMzTni5fDM_29mJzuqjwU5Da22c4cSWJobk8eZSTrRqhd25rB8ZMj3jqeA_-46I/pub?w=960&h=720" alt = "GUI PROTOTYPE"/>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class = "block">
+        <img class = "block_image" src = "https://docs.google.com/drawings/d/e/2PACX-1vQmFF-R2J9rZFRUxIwJ6UBJqRGPfnlo5MkTWXfaiH_OnRjbYgkwx4KWtF4HAlkrgBPCXTvSiEHozZ2X/pub?w=907&h=408" alt = "GUI CONT"/>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openTab(evt, cityName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+function togglePtypes() {
+  var element = document.getElementById("prototypes");
+  if (element.style.display == "block") {
+    element.style.display = "none";
+  } 
+  else {
+    element.style.display = "block";
+  }
+}
+function sendToGitHub() {
+ window.location.href = "https://github.com/TeamQuasar/TCSS360";
+}
+document.getElementById("defaultOpen").click();
+</script>
+   
+</body>
+</html> 
