@@ -87,11 +87,12 @@ public class HMPGUI extends JFrame{
 		JMenu aboutMenu = new JMenu("About");
 		menuBar.add(aboutMenu);
 		
+		About aboutBox = new About();
+		
 		aboutMenu.addMenuListener(new MenuListener() {
             @Override
             public void menuSelected(final MenuEvent theEvent) {
-            	// Show about dialog here
-                System.out.println("This button was clicked now make it do something");
+            	aboutBox.show();
             }
 			@Override
 			public void menuDeselected(MenuEvent e) {	
