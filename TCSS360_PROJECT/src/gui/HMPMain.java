@@ -1,12 +1,13 @@
 package gui;
 
 import java.awt.EventQueue;
+import java.io.IOException;
 
 /**
  * Homeowner's Manual PRO main class. Starts gui.
  * 
- * @author Team Quasars
- * @version 1.0
+ * @author Team Quasar
+ * @version %I%
  */
 public class HMPMain {
 
@@ -18,7 +19,12 @@ public class HMPMain {
         EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new HMPGUI().start();
+                try {
+					new HMPGUI().start();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
             }
         });
     }
