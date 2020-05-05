@@ -8,9 +8,6 @@
 <style>
 body {font-family: Courier;}
 
- .topBar {
-  
- }
  /* Button Format*/
  .pButton {
   border: none;
@@ -82,12 +79,15 @@ body {font-family: Courier;}
 }
  
  .block {
+  justify-content: center;
   max-width:100%;
   max-height:100%;
   background-color:lightgray;
 }
 .block_image{
-  border: none;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
   max-width:100%;
   max-height:100%;
 }
@@ -131,7 +131,7 @@ body {font-family: Courier;}
   <button class="pButton" onclick="toggleTypes('sequence')"> Sequence Model </button>
   <button class="pButton" onclick="toggleTypes('domain')"> Domain Model </button>
   <div class="block" id="requirements" style="display: none;"> 
-    <iframe height = 100% width = 100% class = "block_image" src="https://docs.google.com/document/d/e/2PACX-1vQPYDE1mw13bLLfxAlESlkcG4DVsfYTnO3J-bHh-dF5FEKBSDjylvARCppNzgLAJyi-VRJArhtfvyp9/pub?embedded=true"></iframe>
+    <iframe height = 100% width = 50% class = "block_image" src="https://docs.google.com/document/d/e/2PACX-1vQPYDE1mw13bLLfxAlESlkcG4DVsfYTnO3J-bHh-dF5FEKBSDjylvARCppNzgLAJyi-VRJArhtfvyp9/pub?embedded=true"></iframe>
   </div>
   <div class="block" id="prototypes" style="display: none;">
     <img class="block_image" src="https://docs.google.com/drawings/d/e/2PACX-1vSeMT0x17ewTMJHE5hFliv-pUzC1XdTKl1pDF9cTR2b_yHZH3kFFvqFYkIlfWpSkLysTJz1p77H3oAr/pub?w=960&amp;h=720" alt="PROJECT CHART">
