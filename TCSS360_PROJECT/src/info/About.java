@@ -1,4 +1,4 @@
-package gui;
+package info;
 import java.io.IOException;
 import java.net.*;
 
