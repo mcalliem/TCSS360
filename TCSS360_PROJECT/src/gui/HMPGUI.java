@@ -15,6 +15,8 @@ import javax.swing.SwingConstants;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
 
+import info.About;
+
 /**
  * Homeowner's Manual PRO GUI class. Handles creation of GUI frame and elements.
  * 
