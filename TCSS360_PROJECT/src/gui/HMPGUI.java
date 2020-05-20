@@ -3,6 +3,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.io.IOException;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
@@ -13,6 +14,8 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.event.MenuEvent;
 import javax.swing.event.MenuListener;
+
+import info.About;
 
 /**
  * Homeowner's Manual PRO GUI class. Handles creation of GUI frame and elements.
@@ -46,8 +49,9 @@ public class HMPGUI extends JFrame{
 	
 	/**
 	 * Start JFrame
+	 * @throws IOException 
 	 */
-	public void start() {
+	public void start() throws IOException {
 		myFrame = new HMPGUI();
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setLayout(new BorderLayout());
@@ -81,8 +85,9 @@ public class HMPGUI extends JFrame{
 	 * Generates the menu bar.
 	 * 
 	 * @return the generated menu bar
+	 * @throws IOException 
 	 */
-	private JMenuBar generateMenuBar() {
+	private JMenuBar generateMenuBar() throws IOException {
 		JMenuBar menuBar = new JMenuBar();
 		JMenu aboutMenu = new JMenu("About");
 		menuBar.add(aboutMenu);
