@@ -49,7 +49,7 @@ public class About extends JOptionPane
 		/* This piece of code retrieves the HTML code as a String and finds the version being displayed.
 		 * Temporary solution to a problem we really aren't sure how to solve yet.
 		 */
-		URL repository = new URL("https://github.com/TeamQuasar/TCSS360/blob/master/TCSS360_PROJECT/src/gui/About.java");
+		URL repository = new URL("https://github.com/TeamQuasar/TCSS360/blob/master/TCSS360_PROJECT/src/info/About.java");
 		Scanner html = new Scanner(repository.openStream());
 		String version = "";
 		while(html.hasNext()) {
