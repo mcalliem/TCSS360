@@ -1,6 +1,9 @@
-package gui;
+package info;
+import java.io.IOException;
+import java.net.*;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 import javax.swing.BoxLayout;
 import javax.swing.JLabel;
@@ -14,7 +17,7 @@ import javax.swing.JPanel;
  * @author Romi Tshiorny
  * @author Collin Nguyen
  * @author Idris Istanbul
- * @version 0.5
+ * @version 1.0
  */
 public class About extends JOptionPane
 {
@@ -41,9 +44,25 @@ public class About extends JOptionPane
 	/*
 	 * The class constructor. 
 	 */
-	public About()
+	public About() throws IOException
 	{
-		myVersion = "0.5";
+		/* This piece of code retrieves the HTML code as a String and finds the version being displayed.
+		 * Temporary solution to a problem we really aren't sure how to solve yet.
+		 */
+		URL repository = new URL("https://github.com/TeamQuasar/TCSS360/blob/master/TCSS360_PROJECT/src/info/About.java");
+		Scanner html = new Scanner(repository.openStream());
+		String version = "";
+		while(html.hasNext()) {
+			version = html.nextLine() +"\n";
+			if(version.contains("@version")) {
+				version = version.substring(version.indexOf("@"));
+				version = version.substring(version.indexOf(" "));
+				version = version.substring(1, version.indexOf("<"));
+				break;
+			}
+		}
+		myVersion = version;
+		html.close();
 	}
 	
 	/*
