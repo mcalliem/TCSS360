@@ -39,7 +39,7 @@ class UserTest {
 		assertFalse(user.verifyCredentials("Test", "notPass"));
 	}
 
-//	Not implemented yet
+//	Not implemented yet.
 //	@Test
 //	void testGetSettings() {
 //		
