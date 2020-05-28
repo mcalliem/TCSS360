@@ -82,4 +82,13 @@ public class User {
 	public UserSettings getSettings() {
 		return mySettings;
 	}
+	
+	/**
+	 * Setter method for the user settings
+	 * Base settings should be set on user creation
+	 * @author Romi Tshiorny
+	 */
+	public void setSettings(UserSettings settings) {
+		mySettings = settings;
+	}
 }
