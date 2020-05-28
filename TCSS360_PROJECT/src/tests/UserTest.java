@@ -9,6 +9,9 @@ import info.UserSettings;
 
 class UserTest {
 
+	/**
+	 * @author Collin Nguyen
+	 */
 	@Test
 	void testUserStringStringBoolean() {
 		User user = new User("Test", "Pass", true);
