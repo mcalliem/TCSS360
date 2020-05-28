@@ -13,7 +13,7 @@ import java.util.Calendar;
  * @version 1.0
  *
  */
-public class File 
+public class HomeFile 
 { 
 	/** Fixture to store the file name. */
 	private String myFileName;
@@ -28,7 +28,7 @@ public class File
 	 * @param theFileName - The name of the new file.
 	 * @param theUserNotes - Notes for the new file.
 	 */
-	public File(final String theFileName, final String theUserNotes)
+	public HomeFile(final String theFileName, final String theUserNotes)
 	{
 		myFileName = theFileName;
 		myFileNotes = theUserNotes;
@@ -49,7 +49,7 @@ public class File
 	 */
 	public void addNote(final String theNote)
 	{
-		myFileName = new StringBuilder().append(myFileName).append("\n").
+		myFileNotes = new StringBuilder().append(myFileNotes).append("\n").
 										 append(theNote).toString();
 	}
 	
