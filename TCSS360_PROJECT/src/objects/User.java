@@ -70,7 +70,7 @@ public class User {
 	 * @return True if the username and password match the user
 	 */
 	public boolean verifyCredentials(String enteredUsername, String enteredPassword) {
-		return (myUsername == enteredUsername) && (myPassword == enteredPassword);
+		return (myUsername.equals(enteredUsername)) && (myPassword.equals(enteredPassword));
 	}
 	
 	/**
