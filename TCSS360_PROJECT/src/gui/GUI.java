@@ -20,10 +20,10 @@ import info.About;
 /**
  * Homeowner's Manual PRO GUI class. Handles creation of GUI frame and elements.
  * 
- * @author Team Quasars
+ * @author Collin Nguyen
  * @version 1.0
  */
-public class HMPGUI extends JFrame{
+public class GUI extends JFrame{
 
 	/**
 	 * Serial Version UID
@@ -33,7 +33,7 @@ public class HMPGUI extends JFrame{
 	/**
 	 * Main JFrame
 	 */
-	private HMPGUI myFrame;
+	private GUI myFrame;
 	
 	/**
 	 * Frame preferred dimension
@@ -43,7 +43,7 @@ public class HMPGUI extends JFrame{
 	/**
 	 * Parameterless constructor
 	 */
-	public HMPGUI() {
+	public GUI() {
 		super("Homeowner's Manual PRO");
 	}
 	
@@ -52,7 +52,7 @@ public class HMPGUI extends JFrame{
 	 * @throws IOException 
 	 */
 	public void start() throws IOException {
-		myFrame = new HMPGUI();
+		myFrame = new GUI();
 		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		myFrame.setLayout(new BorderLayout());
 		
