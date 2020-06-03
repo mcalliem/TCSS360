@@ -17,8 +17,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 
 import objects.AccountManager;
@@ -47,6 +45,16 @@ public class Login extends JFrame {
 	private Login myFrame;
 	
 	/**
+	 * Log in button 
+	 */
+	final JButton loginButton = new JButton("Log In");
+	
+	/**
+	 * Set this to true to bypass login screen and go straight to the main GUI.
+	 */
+	private boolean debug = true;
+	
+	/**
 	 * Parameterless constructor
 	 */
 	public Login() {
@@ -60,15 +68,25 @@ public class Login extends JFrame {
 	 * @author Collin Nguyen
 	 */
 	public void start() throws IOException {
-		myFrame = new Login();
-		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		myFrame.setLayout(new BorderLayout());
+		if (!debug) {
+			myFrame = new Login();
+			myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			myFrame.setLayout(new BorderLayout());
 		
-		myFrame.add(createMainPanel());
+			myFrame.add(createMainPanel());
 		
-		myFrame.pack();
-		myFrame.setVisible(true);
-		myFrame.setLocationRelativeTo(null);
+			myFrame.pack();
+			myFrame.setVisible(true);
+			myFrame.setLocationRelativeTo(null);
+		} else {
+			GUI mainGUI = new GUI();
+			try {
+				mainGUI.start(myManager);
+			} catch (IOException e1) {
+				e1.printStackTrace();
+				loginButton.setEnabled(true);
+			}
+		}
 	}
 	
 	/**
@@ -83,7 +101,7 @@ public class Login extends JFrame {
 		JLabel passwordLabel = new JLabel("Password:");
 		JTextField loginField = new JTextField();
 		JPasswordField passwordField = new JPasswordField();
-		JButton loginButton = new JButton("Log In");
+		//JButton loginButton = new JButton("Log In");
 		JButton createButton = new JButton("Create Account");
 		JButton quitButton = new JButton("Quit");
 		
@@ -140,6 +158,7 @@ public class Login extends JFrame {
 	 * @author Collin Nguyen
 	 */
 	private void login(final String username, final String password) {
+		loginButton.setEnabled(false);
 		if (myManager.enterCredentials(username, password)) {
 			GUI mainGUI = new GUI();
 			try {
@@ -147,6 +166,7 @@ public class Login extends JFrame {
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
+				loginButton.setEnabled(true);
 			}
 			myFrame.setVisible(false);
 		} else {
@@ -154,6 +174,8 @@ public class Login extends JFrame {
 				    "Invalid username/password. Please try again.",
 				    "Error",
 				    JOptionPane.ERROR_MESSAGE);
+			loginButton.setEnabled(true);
+			
 		}
 	}
 	
