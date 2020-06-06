@@ -22,7 +22,6 @@ public class SearchEngine
 	public SearchEngine(HashSet<Room> theSet)
 	{
 		mySet = theSet;
-		updateSize(theSet);
 	}
 	
 	/*
@@ -33,7 +32,6 @@ public class SearchEngine
 	public void changeSet(HashSet<Room> newSet)
 	{
 		mySet = newSet;
-		updateSize(newSet);
 	}
 	
 	/*
@@ -54,6 +52,16 @@ public class SearchEngine
 	public HashSet<Room> getSetCopy()
 	{
 		return new HashSet<Room>(mySet);
+	}
+	
+	/*
+	 *  Method to get the size of the data set this SearchEngine currently operates on.  
+	 * 
+	 *  @return Number of rooms searched by this SearchEngine.    
+	 */
+	public int getDataSize()
+	{
+		return mySet.size();
 	}
 	
 	/*
@@ -101,14 +109,4 @@ public class SearchEngine
 	}
 	
 	//TODO: Allow search of notes for keyword too.
-	
-	/*
-	 *  Method to update size of database.  
-	 * 
-	 *  @param theSet A set of room objects to size check.  
-	 */
-	private void updateSize(HashSet<Room> theSet)
-	{
-		dataSize = theSet.size();
-	}
 }
