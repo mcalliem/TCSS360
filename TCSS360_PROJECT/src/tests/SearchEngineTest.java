@@ -47,13 +47,13 @@ class SearchEngineTest
 		//Add files to subRooms
 		for (Room r: room1.getSubRooms())
 		{
-			r.addFile(new HomeFile(i.toString()));
+			r.addFile(new HomeFile("g" + i.toString()));
 			i++;
 		}
 		
 		for (Room r: room2.getSubRooms())
 		{
-			r.addFile(new HomeFile(i.toString()));
+			r.addFile(new HomeFile("g" + i.toString()));
 			i++;
 		}
 		
@@ -70,7 +70,7 @@ class SearchEngineTest
 	@Test
 	void constructorTest() 
 	{
-		assertTrue(search != null);
+		assertNotNull(search);
 	}
 	
 	//Test for the SearchEngine's set setter. 
@@ -87,7 +87,7 @@ class SearchEngineTest
 	void getSetTest() 
 	{
 		HashSet<Room> rooms = search.getSet();
-		assertTrue(rooms.size() == 2);
+		assertEquals(rooms.size(), 2);
 	}
 	
 	//Test for the SearchEngine's set copy getter. 
@@ -97,8 +97,8 @@ class SearchEngineTest
 		HashSet<Room> roomCopy = search.getSetCopy();
 		HashSet<Room> roomActual = search.getSet();
 		rooms.add(new Room("new"));
-		assertTrue(roomCopy.size() == 2);
-		assertTrue(roomActual.size() == 3);
+		assertEquals(roomCopy.size(), 2);
+		assertEquals(roomActual.size(), 3);
 	}
 	
 	@Test
@@ -106,12 +106,29 @@ class SearchEngineTest
 	{
 		/*List of file names in default search:
 			Room1: abc, def, abcdef
-				sub1a: 1
-				sub1b: 2
+				sub1a: g1
+				sub1b: g2
 			Room2: ABC, DEF, ABCDEF
-				sub2a: 3
-				sub2b: 4
+				sub2a: g3
+				sub2b: g4
 		*/
+		
+		//Should match: abc, abcdef, ABC, ABCDEF
+		HashSet<HomeFile> results1 = search.searchMe("a");
+		
+		//Should match: abcdef, ABCDEF
+		HashSet<HomeFile> results2 = search.searchMe("cd");
+		
+		//Should match: g2
+		HashSet<HomeFile> results3 = search.searchMe("2");
+		
+		//Should match: g1, g2, g3, g4
+		HashSet<HomeFile> results4 = search.searchMe("g");
+		
+		assertEquals(4, results1.size());
+		assertEquals(2, results2.size());
+		assertEquals(1, results3.size());
+		assertEquals(4, results4.size());
 	}
 
 }
