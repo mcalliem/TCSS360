@@ -9,6 +9,7 @@ import java.util.Scanner;
 
 /**
  * Class for info stored about a user that can be imported/exported.
+ * 
  * @author Romi Tshiorny
  * @version 1.0
  */
